@@ -27,6 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(command.arph);
 	context.subscriptions.push(command.amcv);
 	context.subscriptions.push(command.ged);
+	context.subscriptions.push(command.emd);
 }
 
 // this method is called when your extension is deactivated
