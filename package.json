@@ -95,7 +95,7 @@
 		"submenus": [
 			{
 			  "id": "jackal-plugin.menu",
-			  "label": "Stage"
+			  "label": "Jackal"
 			}
 		  ]
 	},
