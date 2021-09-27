@@ -26,7 +26,31 @@
 			},
 			{
 				"command": "jackal-plugin.t200",
-				"title": "Append HTTP:200 tests"
+				"title": "Append HTTP: 200 tests"
+			},
+			{
+				"command": "jackal-plugin.ts",
+				"title": "Append smart test assertions"
+			},
+			{
+				"command": "jackal-plugin.clr",
+				"title": "Remove duplicate requests"
+			},
+			{
+				"command": "jackal-plugin.clv",
+				"title": "Remove unused collection variables"
+			},
+			{
+				"command": "jackal-plugin.arph",
+				"title": "Append request payload hash"
+			},
+			{
+				"command": "jackal-plugin.amcv",
+				"title": "Append missing collection variables"
+			},
+			{
+				"command": "jackal-plugin.ged",
+				"title": "Generate MD descriptions in collection"
 			}
 		],
 		"menus": {
@@ -43,7 +67,27 @@
 				  "group": "navigation"
 				},
 				{
-				  "command": "jackal-plugin.helloWorld",
+				  "command": "jackal-plugin.ts",
+				  "group": "navigation"
+				},
+				{
+				  "command": "jackal-plugin.clr",
+				  "group": "navigation"
+				},
+				{
+				  "command": "jackal-plugin.clv",
+				  "group": "navigation"
+				},
+				{
+				  "command": "jackal-plugin.arph",
+				  "group": "navigation"
+				},
+				{
+				  "command": "jackal-plugin.amcv",
+				  "group": "navigation"
+				},
+				{
+				  "command": "jackal-plugin.ged",
 				  "group": "navigation"
 				}
 			  ]
