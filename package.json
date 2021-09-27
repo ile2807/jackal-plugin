@@ -1,0 +1,84 @@
+{
+	"name": "jackal-plugin",
+	"displayName": "Jackal Plugin",
+	"description": "Jackal plugin for Postman Collections",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:jackal-plugin.helloWorld",
+		"onCommand:jackal-plugin.t200"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "jackal-plugin.helloWorld",
+				"title": "Hello"
+			},
+			{
+				"command": "jackal-plugin.menu",
+				"title": "Jackal"
+			},
+			{
+				"command": "jackal-plugin.t200",
+				"title": "Append HTTP:200 tests"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "resourceLangId == json",
+					"submenu": "jackal-plugin.menu",
+					"group": "navigation"
+				}
+			],
+			"jackal-plugin.menu": [
+				{
+				  "command": "jackal-plugin.t200",
+				  "group": "navigation"
+				},
+				{
+				  "command": "jackal-plugin.helloWorld",
+				  "group": "navigation"
+				}
+			  ]
+		},
+		"submenus": [
+			{
+			  "id": "jackal-plugin.menu",
+			  "label": "Stage"
+			}
+		  ]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"test-compile": "tsc -p . --outDir out",
+		"pretest": "npm run test-compile && npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.60.0",
+		"@types/glob": "^7.1.4",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^4.31.1",
+		"@typescript-eslint/parser": "^4.31.1",
+		"eslint": "^7.32.0",
+		"glob": "^7.1.7",
+		"mocha": "^9.1.1",
+		"typescript": "^4.4.3",
+		"ts-loader": "^9.2.5",
+		"webpack": "^5.52.1",
+		"webpack-cli": "^4.8.0",
+		"@vscode/test-electron": "^1.6.2"
+	}
+}
