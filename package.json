@@ -2,7 +2,10 @@
 	"name": "jackal-plugin",
 	"displayName": "Jackal Plugin",
 	"description": "Jackal plugin for Postman Collections",
-	"version": "0.0.1",
+	"version": "1.0.0",
+	"publisher": "Jackal",
+	"author": "Ilija Trajkoski",
+	"icon": "https://github.com/ile2807/postman-collection-tools-gui/blob/main/assets/jackal.png",
 	"engines": {
 		"vscode": "^1.60.0"
 	},
