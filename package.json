@@ -3,9 +3,10 @@
 	"displayName": "Jackal Plugin",
 	"description": "Jackal plugin for Postman Collections",
 	"version": "1.0.0",
-	"publisher": "Jackal",
+	"publisher": "IlijaTrajkoski",
 	"author": "Ilija Trajkoski",
-	"icon": "https://github.com/ile2807/jackal-plugin/raw/main/src/images/jackal.png",
+	"icon": "images/jackal.png",
+	"repository": "https://github.com/ile2807/jackal-plugin.git",
 	"engines": {
 		"vscode": "^1.60.0"
 	},
@@ -13,8 +14,6 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:jackal-plugin.helloWorld",
-		"onCommand:jackal-plugin.t200"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {

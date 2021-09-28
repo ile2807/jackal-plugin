@@ -5,7 +5,7 @@ Jackal is a VS Code extension that enables using [Jackal-postman](https://www.np
 ## Usage
 All commands are accessible when right clicking on the EXPLORER on a *.json postman collection. The same commands are also available on right click on an open tab of *.json postman collection in the file editor. All commands are located under the Jackal submenu.
 
-![Example](https://github.com/ile2807/jackal-plugin/raw/main/src/images/contextMenuExample.png)
+![Example](images/contextMenuExample.png)
 
 ## Features
 
