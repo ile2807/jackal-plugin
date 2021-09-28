@@ -2,7 +2,7 @@
 	"name": "jackal-plugin",
 	"displayName": "Jackal Plugin",
 	"description": "Jackal plugin for Postman Collections",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "IlijaTrajkoski",
 	"author": "Ilija Trajkoski",
 	"icon": "images/jackal.png",
@@ -14,14 +14,18 @@
 		"Other"
 	],
 	"activationEvents": [
+		"onCommand:jackal-plugin.t200",
+		"onCommand:jackal-plugin.ts",
+		"onCommand:jackal-plugin.clv",
+		"onCommand:jackal-plugin.arph",
+		"onCommand:jackal-plugin.amcv",
+		"onCommand:jackal-plugin.clr",
+		"onCommand:jackal-plugin.ged",
+		"onCommand:jackal-plugin.emd"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "jackal-plugin.helloWorld",
-				"title": "Hello"
-			},
 			{
 				"command": "jackal-plugin.menu",
 				"title": "Jackal"

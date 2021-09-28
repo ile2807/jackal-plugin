@@ -13,7 +13,7 @@ export const ts = vscode.commands.registerCommand('jackal-plugin.ts', (uri: vsco
 
 export const clr = vscode.commands.registerCommand('jackal-plugin.clr', (uri: vscode.Uri) => {
     const executionMessage = jackal.cleanRequests(uri.fsPath, uri.fsPath);
-    vscode.window.showInformationMessage(`File updated with message: ${executionMessage}`);
+    vscode.window.showInformationMessage(`File updated with message: ${JSON.stringify(Array.from(executionMessage))}`);
 });
 
 export const clv = vscode.commands.registerCommand('jackal-plugin.clv', (uri: vscode.Uri) => {
@@ -37,7 +37,6 @@ export const ged = vscode.commands.registerCommand('jackal-plugin.ged', (uri: vs
 });
 
 export const emd = vscode.commands.registerCommand('jackal-plugin.emd', (uri: vscode.Uri) => {
-    vscode.window.showInformationMessage(`Original ${uri.fsPath}`);
     const options: vscode.SaveDialogOptions = {
         saveLabel: 'Save as',
         filters: {
