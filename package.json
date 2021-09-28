@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"publisher": "Jackal",
 	"author": "Ilija Trajkoski",
-	"icon": "https://github.com/ile2807/postman-collection-tools-gui/blob/main/assets/jackal.png",
+	"icon": "https://github.com/ile2807/jackal-plugin/raw/main/src/images/jackal.png",
 	"engines": {
 		"vscode": "^1.60.0"
 	},

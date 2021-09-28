@@ -1,6 +1,12 @@
 # Jackal 
 
 Jackal is a VS Code extension that enables using [Jackal-postman](https://www.npmjs.com/package/jackal-postman) features inside VS Code
+
+## Usage
+All commands are accessible when right clicking on the EXPLORER on a *.json postman collection. The same commands are also available on right click on an open tab of *.json postman collection in the file editor. All commands are located under the Jackal submenu.
+
+![Example](https://github.com/ile2807/jackal-plugin/raw/main/src/images/contextMenuExample.png)
+
 ## Features
 
 Currently supported features from Jackal-postman are:
@@ -16,10 +22,7 @@ Currently supported features from Jackal-postman are:
 |Generate MD descriptions in collection|Generates MD descriptions on collection and requests, the description is in MD format and is saved in the output collection file. This command saves the MD descriptions in the collection file. To export these descriptions in a separate MD file use `Export MD document from collection`.|
 |Export MD document from collection|Creates summary Markdown document from all the collection descriptions. ***This feature does not automatically generate descriptions***.  It only collects descriptions of all elements of the collection and creates one summary Markdown file.|
 
-## Usage
-All commands are accessible when right clicking on the EXPLORER on a *.json postman collection. The same commands are also available on right click on an open tab of *.json postman collection in the file editor. All commands are located under the Jackal submenu.
 
-![](src/images/contextMenuExample.png)
 ## Versions
 ### 1.0.0
 
