@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import * as vscode from 'vscode';
 import jackal = require('jackal-postman');
+const postmanToOpenApi = require('postman-to-openapi');
 
 export const t200 = vscode.commands.registerCommand('jackal-plugin.t200', (uri: vscode.Uri) => {
     const executionMessage = jackal.tests200(uri.fsPath, uri.fsPath);
@@ -34,6 +35,32 @@ export const amcv = vscode.commands.registerCommand('jackal-plugin.amcv', (uri: 
 export const ged = vscode.commands.registerCommand('jackal-plugin.ged', (uri: vscode.Uri) => {
     const executionMessage = jackal.generateDescriptions(uri.fsPath, uri.fsPath);
     vscode.window.showInformationMessage(`File updated with message: ${executionMessage}`);
+});
+
+export const o2a = vscode.commands.registerCommand('jackal-plugin.o2a', (uri: vscode.Uri) => {
+    const options: vscode.SaveDialogOptions = {
+        saveLabel: 'Save as',
+        filters: {
+            "Yaml files": ["yml"]
+        },
+        title: "Save the output OpenApi file"
+    };
+    vscode.window.showSaveDialog(options).then(fileUri => {
+        if (fileUri) {
+            postmanToOpenApi(uri.fsPath, fileUri.fsPath, { defaultTag: 'General' }).then((result: string) => {
+                if (result.startsWith("openapi: 3.0.0")) {
+                    vscode.window.showInformationMessage(`File updated with message: OK`);
+                } else {
+                    vscode.window.showInformationMessage(`File updated with message: ${result}`);
+                }
+            })
+                .catch((err: string) => {
+                    vscode.window.showInformationMessage(`Error occured: ${err}`);
+                });
+
+        }
+    });
+
 });
 
 export const emd = vscode.commands.registerCommand('jackal-plugin.emd', (uri: vscode.Uri) => {

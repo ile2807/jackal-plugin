@@ -21,9 +21,16 @@ Currently supported features from Jackal-postman are:
 |Append missing collection variables|Appends missing collection variables that are referenced in any request, but are not present in the collection.|
 |Generate MD descriptions in collection|Generates MD descriptions on collection and requests, the description is in MD format and is saved in the output collection file. This command saves the MD descriptions in the collection file. To export these descriptions in a separate MD file use `Export MD document from collection`.|
 |Export MD document from collection|Creates summary Markdown document from all the collection descriptions. ***This feature does not automatically generate descriptions***.  It only collects descriptions of all elements of the collection and creates one summary Markdown file.|
+Generate [OpenApi](https://swagger.io/specification/) specification|Creates OpenApi yaml document from the `sourceFile`. It uses [postman-to-openapi](https://www.npmjs.com/package/postman-to-openapi) to generate the output|
 
 
 ## Versions
 ### 1.0.0
 
 Initial release of the extension
+
+### 1.0.1
+Small bugfixes
+
+### 1.1.0
+Generate OpenApi from collection introduced
