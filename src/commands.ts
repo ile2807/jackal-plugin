@@ -37,6 +37,56 @@ export const ged = vscode.commands.registerCommand('jackal-plugin.ged', (uri: vs
     vscode.window.showInformationMessage(`File updated with message: ${executionMessage}`);
 });
 
+export const mc = vscode.commands.registerCommand('jackal-plugin.mc', async () => {
+    //Puts selected to clipboard
+    await vscode.commands.executeCommand('copyFilePath');
+    //Reads the selected files from clipboard
+    const text = await vscode.env.clipboard.readText();
+    const preparedPath = text.split("\r\n").join(",");
+    console.log(preparedPath);
+    const options: vscode.SaveDialogOptions = {
+        saveLabel: 'Save as',
+        filters: {
+            "Collection files": ["json"]
+        },
+        title: "Save the merged collection file"
+    };
+    const fileUri = await vscode.window.showSaveDialog(options);
+    if (fileUri) {
+        const executionMessage = jackal.mergeCollections(undefined, undefined, fileUri.fsPath, preparedPath);
+        executionMessage.then((text: string) => {
+            vscode.window.showInformationMessage(`File updated with message: ${text}`);
+        }).then(undefined, (err: string) => {
+            vscode.window.showInformationMessage(`Error occured: ${err}`);
+        });
+    }
+});
+
+export const mev = vscode.commands.registerCommand('jackal-plugin.mev', async () => {
+    //Puts selected to clipboard
+    await vscode.commands.executeCommand('copyFilePath');
+    //Reads the selected files from clipboard
+    const text = await vscode.env.clipboard.readText();
+    const preparedPath = text.split("\r\n").join(",");
+    console.log(preparedPath);
+    const options: vscode.SaveDialogOptions = {
+        saveLabel: 'Save as',
+        filters: {
+            "Environment files": ["json"]
+        },
+        title: "Save the merged environment file"
+    };
+    const fileUri = await vscode.window.showSaveDialog(options);
+    if (fileUri) {
+        const executionMessage = jackal.mergeVarsToEnvironment(undefined, undefined, fileUri.fsPath, preparedPath);
+        executionMessage.then((text: string) => {
+            vscode.window.showInformationMessage(`File updated with message: ${text}`);
+        }).then(undefined, (err: string) => {
+            vscode.window.showInformationMessage(`Error occured: ${err}`);
+        });
+    }
+});
+
 export const o2a = vscode.commands.registerCommand('jackal-plugin.o2a', (uri: vscode.Uri) => {
     const options: vscode.SaveDialogOptions = {
         saveLabel: 'Save as',

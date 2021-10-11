@@ -2,7 +2,7 @@
 	"name": "jackal-plugin",
 	"displayName": "Jackal Plugin",
 	"description": "Jackal plugin for Postman Collections",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"publisher": "IlijaTrajkoski",
 	"author": "Ilija Trajkoski",
 	"icon": "images/jackal.png",
@@ -22,7 +22,9 @@
 		"onCommand:jackal-plugin.clr",
 		"onCommand:jackal-plugin.ged",
 		"onCommand:jackal-plugin.emd",
-		"onCommand:jackal-plugin.o2a"
+		"onCommand:jackal-plugin.o2a",
+		"onCommand:jackal-plugin.mc",
+		"onCommand:jackal-plugin.mev"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -66,6 +68,15 @@
 			{
 				"command": "jackal-plugin.o2a",
 				"title": "Generate OpenApi from collection"
+			},
+			{
+				"command": "jackal-plugin.mc",
+				"title": "Merge collections"
+			}
+			,
+			{
+				"command": "jackal-plugin.mev",
+				"title": "Export all collection variables to environment"
 			}
 		],
 		"menus": {
@@ -119,6 +130,14 @@
 				{
 					"command": "jackal-plugin.o2a",
 					"group": "navigation"
+				},
+				{
+					"command": "jackal-plugin.mc",
+					"group": "navigation"
+				},
+				{
+					"command": "jackal-plugin.mev",
+					"group": "navigation"
 				}
 			]
 		},
@@ -157,5 +176,6 @@
 		"webpack": "^5.52.1",
 		"webpack-cli": "^4.8.0"
 	},
-	"dependencies": {}
+	"dependencies": {
+	}
 }

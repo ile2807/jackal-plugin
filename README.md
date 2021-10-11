@@ -34,3 +34,6 @@ Small bugfixes
 
 ### 1.1.0
 Generate OpenApi from collection introduced
+
+### 1.2.0
+`Collection merge` and `Export collection variables to environment file` features are added
